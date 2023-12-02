@@ -1,4 +1,3 @@
-import { Movie } from "../interfaces/movie";
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
@@ -10,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const movies = [
       {
         id: 1,
-        poster: "../../../assets/images/Tenet.png",
+        poster: "assets/images/Tenet.png",
         title: "Tenet",
         description: "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold insomething beyond real time.",
         rating: 7.8,
@@ -21,7 +20,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 2,
-        poster: "../../../assets/images/Spider_Man.png",
+        poster: "assets/images/Spider_Man.png",
         title: "Spider-Man: Into the Spider-Verse",
         description: "Teen Miles Morales becomes the Spider-Man of his universe, and must join with five spiderpowered individuals from other dimensions to stop a threat for all realities.",
         rating: 8.4,
@@ -32,7 +31,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 3,
-        poster: "../../../assets/images/Knives_Out.png",
+        poster: "assets/images/Knives_Out.png",
         title: "Knives Out",
         description: "A detective investigates the death of a patriarch of an eccentric, combative family",
         rating: 7.9,
@@ -43,7 +42,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 4,
-        poster: "../../../assets/images/Avengers.png",
+        poster: "assets/images/Avengers.png",
         title: "Avengers: Age of Ultron",
         description: "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's mightiest movies to stop the villainous Ultron from enacting his terrible plan.",
         rating: 7.3,
