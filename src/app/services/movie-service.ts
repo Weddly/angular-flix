@@ -8,7 +8,7 @@ import { Movie } from "../interfaces/movie";
 })
 export class MovieService {
 
-  private movieDBUrl = 'api/movies/';  // URL to web api
+  private movieDBUrl = 'api/movies';  // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -22,6 +22,14 @@ export class MovieService {
         tap(_ => this.log('fetched movies')),
         catchError(this.handleError<Movie[]>('getMovies', []))
       );
+  }
+
+  getMovie(id: number): Observable<Movie> {
+    const url = `${this.movieDBUrl}/${id}`;
+    return this.http.get<Movie>(url).pipe(
+      tap(_ => this.log(`fetched movie id=${id}`)),
+      catchError(this.handleError<Movie>(`getMovie id=${id}`))
+    );
   }
 
   private log(message: string) {

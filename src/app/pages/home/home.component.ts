@@ -20,7 +20,19 @@ export class HomeComponent implements OnInit {
 
   getMovies(): void {
     this.movieService.getMovies()
-      .subscribe(movies => this.movies = movies)
+      .subscribe(movies => this.movies = movies.sort((a, b) => a.title.localeCompare(b.title)));
+  }
+
+  sortMovies(value: any): void {
+    let selectedValue = value.target.value;
+
+    if (selectedValue === "byTitle") {
+      this.movies.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    if (selectedValue === "byRelease") {
+      this.movies.sort((a, b) => a.releasedDate < b.releasedDate ? -1 : a.releasedDate > b.releasedDate ? 1 : 0);
+    }
   }
 
 }
