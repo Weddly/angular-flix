@@ -1,7 +1,14 @@
 <div class="detail__container">
-  <p style="color: aliceblue;">{{selectedMovie?.title}}</p>
-  <!-- <iframe width="420" height="315" src="{{this.safeURL}}"></iframe> -->
-
-  <youtube-player videoId="{{safeURL}}"></youtube-player>
-
+  <h2 class="detail__back" (click)="goBack()">
+    <button class="detail__back__icon">
+      <fa-icon [icon]="backIcon"></fa-icon>
+    </button>
+    Back
+  </h2>
+  <div class="detail__right">
+    <app-movie-info [selectedMovie]="selectedMovie"></app-movie-info>
+  </div>
+  <div class="detail_left">
+    <app-movie-trailer videoId="{{movieUrlId}}"></app-movie-trailer>
+  </div>
 </div>

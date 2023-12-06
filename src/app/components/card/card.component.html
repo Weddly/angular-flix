@@ -1,5 +1,7 @@
-<a routerLink="/detail/{{movie.id}}" class="card__container">
-  <img class="card__image" src={{movie.poster}} alt="movie-poster">
+<div class="card__container">
+  <a routerLink="/detail/{{movie.id}}">
+    <img class="card__image" src={{movie.poster}} alt="movie-poster">
+  </a>
   <app-card-label movieLabel="{{movie.title}}" movieRelease="{{movie.releasedDate | date: 'yyyy'}}"></app-card-label>
   <app-card-favorite></app-card-favorite>
-</a>
+</div>

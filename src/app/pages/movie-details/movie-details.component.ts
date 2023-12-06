@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/interfaces/movie';
 import { MovieService } from 'src/app/services/movie-service';
 import YoutubeUtils from 'src/app/utils/youtube-utils';
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -11,19 +13,22 @@ import YoutubeUtils from 'src/app/utils/youtube-utils';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
-  selectedMovie: Movie | undefined;
-  safeURL = '';
+  selectedMovie!: Movie;
+  movieUrlId = '';
+  backIcon = faArrowCircleLeft;
 
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
-
+    private location: Location
   ) { }
 
   ngOnInit(): void {
     this.getMovie();
+  }
 
-
+  goBack(): void {
+    this.location.back();
   }
 
   getMovie() {
@@ -31,15 +36,13 @@ export class MovieDetailsComponent implements OnInit {
     this.movieService.getMovie(id)
       .subscribe(movie => {
         this.selectedMovie = movie;
-        this.sanitizeURL();
+        this.getMovieUrlId();
       });
-    debugger;
   }
 
-  sanitizeURL() {
-    debugger;
+  getMovieUrlId() {
     if (this.selectedMovie?.trailer) {
-      this.safeURL = YoutubeUtils.extractVideoID(this.selectedMovie.trailer) ?? '';
+      this.movieUrlId = YoutubeUtils.extractVideoID(this.selectedMovie.trailer) ?? '';
     }
   }
 }

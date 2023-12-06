@@ -1,0 +1,11 @@
+.trailer__title {
+  text-align: center;
+  color: white;
+}
+
+.trailer__title__icon{
+  background: black;
+  color: white;
+  font-size: 25px;
+  margin-left: 5px;
+}

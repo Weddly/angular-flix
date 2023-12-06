@@ -1,0 +1,31 @@
+<div class="info__container" *ngIf="selectedMovie">
+  <div class="info__poster">
+    <img src="{{selectedMovie.poster}}" alt="poster">
+  </div>
+  <div class="info__text">
+    <div class="info__text__toggle">
+      <label class="switch">
+        <input type="checkbox" value="{{selectedMovie.addedToWatchList}}" (click)="changeWatchList()">
+        <span class="slider round"></span>
+      </label>
+      <div class="info__text__toggle__label" *ngIf="!selectedMovie.addedToWatchList">Add to Watchlist</div>
+      <div class="info__text__toggle__label" *ngIf="selectedMovie.addedToWatchList">On my Watchlist</div>
+    </div>
+    <h1 class="info__text__title">{{selectedMovie.title}}</h1>
+    <div>
+      <b>Release:</b> {{selectedMovie.releasedDate | date}}
+    </div>
+    <div>
+      <b>Duration:</b> {{selectedMovie.duration}}
+    </div>
+    <div>
+      <b>Genre:</b> {{selectedMovie.genre}}
+    </div>
+    <div>
+      <b>Rating:</b> {{selectedMovie.rating}}
+    </div>
+    <div style="text-align: justify;">
+      <b>Description:</b> {{selectedMovie.description}}
+    </div>
+  </div>
+</div>
