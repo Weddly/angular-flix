@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie';
-import { MovieService } from 'src/app/services/movie-service';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +20,31 @@ export class HomeComponent implements OnInit {
 
   getMovies(): void {
     this.movieService.getMovies()
-      .subscribe(movies => this.movies = movies)
+      .subscribe(movies => {
+        this.movies = movies.sort((a, b) => a.title.localeCompare(b.title));
+        this.checkWatchlist();
+      });
+  }
+
+  checkWatchlist(): void {
+    this.movies.forEach(e => {
+      let value = localStorage.getItem(e.id.toString());
+      if (value) {
+        e.addedToWatchList = Boolean(value);
+      }
+    })
+  }
+
+  sortMovies(value: any): void {
+    let selectedValue = value.target.value;
+
+    if (selectedValue === "byTitle") {
+      this.movies.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    if (selectedValue === "byRelease") {
+      this.movies.sort((a, b) => a.releasedDate < b.releasedDate ? -1 : a.releasedDate > b.releasedDate ? 1 : 0);
+    }
   }
 
 }

@@ -1,0 +1,12 @@
+<div class="trailer__container" *ngIf="videoId.length > 0">
+  <h2 class="trailer__title" (click)="showTrailer = !showTrailer" *ngIf="!showTrailer">Click To Watch Trailer
+    <button class="trailer__title__icon">
+    <fa-icon [icon]="openIcon"></fa-icon>
+  </button></h2>
+  <h2 class="trailer__title" (click)="showTrailer = !showTrailer" *ngIf="showTrailer">Click To Hide Trailer
+    <button class="trailer__title__icon">
+      <fa-icon [icon]="closeIcon"></fa-icon>
+    </button>
+  </h2>
+  <youtube-player videoId="{{videoId}}" [height]="450" suggestedQuality="highres" *ngIf="showTrailer"></youtube-player>
+</div>

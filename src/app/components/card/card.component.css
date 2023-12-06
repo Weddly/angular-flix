@@ -1,6 +1,6 @@
 .card__container {
   position: relative;
-  border: 3px solid #3E4357;
+  border: 3px solid #573e3e;
   border-radius: 10px;
   width: 275px;
   height: 400px;
@@ -11,12 +11,11 @@
 }
 
 .card__image {
-  min-width: 100%;
-  min-height: 100%;
+  width: 275px;
+  height: 400px;
   transition: transform .8s;
 }
 
 .card__image:hover {
   transform: scale(1.1);
-
 }

@@ -1,10 +1,28 @@
 .home__container {
+  padding-top: 50px;
+}
+
+.home__list {
   width: 90%;
   margin: auto;
-  padding-top: 50px;
   display: flex;
-
   justify-content: space-around;
   align-items: baseline;
   flex-wrap: wrap;
+}
+
+.home__sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 15px 50px 15px 0px;
+
+}
+
+.home__sort select#sort{
+  width: 130px;
+  height: 20px;
+  font-size: 15px;
+  border-radius: 5px;
+  text-indent: 3px;
 }

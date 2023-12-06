@@ -1,0 +1,14 @@
+<div class="detail__container">
+  <h2 class="detail__back" (click)="goBack()">
+    <button class="detail__back__icon">
+      <fa-icon [icon]="backIcon"></fa-icon>
+    </button>
+    Back
+  </h2>
+  <div class="detail__right">
+    <app-movie-info *ngIf="selectedMovie" [selectedMovie]=selectedMovie></app-movie-info>
+  </div>
+  <div class="detail_left">
+    <app-movie-trailer videoId="{{movieUrlId}}"></app-movie-trailer>
+  </div>
+</div>

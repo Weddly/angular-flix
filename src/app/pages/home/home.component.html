@@ -1,5 +1,11 @@
 <div class="home__container">
-<div *ngFor="let movie of movies" class="home__list">
-  <app-card [movie]="movie" ></app-card>
-</div>
+  <div class="home__sort">
+    <select name="sort" id="sort" (change)="sortMovies($event)">
+      <option value="byTitle" selected>Sort by title</option>
+      <option value="byRelease">Sort by release</option>
+    </select>
+  </div>
+  <div class="home__list">
+    <app-card *ngFor="let movie of movies" [movie]="movie" ></app-card>
+  </div>
 </div>

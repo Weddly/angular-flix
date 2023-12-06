@@ -8,4 +8,5 @@ export interface Movie {
   genre: string;
   releasedDate: Date;
   trailer: string;
+  addedToWatchList: Boolean;
 }
