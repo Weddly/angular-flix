@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/interfaces/movie';
-import { MovieService } from 'src/app/services/movie-service';
+import { MovieService } from 'src/app/services/movie.service';
 import YoutubeUtils from 'src/app/utils/youtube-utils';
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common';

@@ -2,13 +2,13 @@
   <div class="card-favorite__title">
     <div class="card-favorite__watchlist" *ngIf="!addedToWatchlist">
       <h3>Add to Watchlist</h3>
-      <button (click)="changeWatchList(true)">
+      <button (click)="changeWatchList(this.movieId, true)">
         <fa-icon [icon]="addIcon"></fa-icon>
       </button>
     </div>
     <div class="card-favorite__watchlist" *ngIf="addedToWatchlist">
       <h3>On my Watchlist</h3>
-      <button (click)="changeWatchList(false)">
+      <button (click)="changeWatchList(this.movieId,false)">
         <fa-icon [icon]="removeIcon"></fa-icon>
       </button>
     </div>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,6 +15,7 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { MovieTrailerComponent } from './components/movie-trailer/movie-trailer.component';
+import { MovieService } from './services/movie.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { MovieTrailerComponent } from './components/movie-trailer/movie-trailer.
     FontAwesomeModule,
     YouTubePlayerModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

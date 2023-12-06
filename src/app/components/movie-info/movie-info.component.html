@@ -5,7 +5,7 @@
   <div class="info__text">
     <div class="info__text__toggle">
       <label class="switch">
-        <input type="checkbox" value="{{selectedMovie.addedToWatchList}}" (click)="changeWatchList()">
+        <input type="checkbox" [checked]=selectedMovie.addedToWatchList (click)="changeWatchList()">
         <span class="slider round"></span>
       </label>
       <div class="info__text__toggle__label" *ngIf="!selectedMovie.addedToWatchList">Add to Watchlist</div>

@@ -6,7 +6,7 @@
     Back
   </h2>
   <div class="detail__right">
-    <app-movie-info [selectedMovie]="selectedMovie"></app-movie-info>
+    <app-movie-info *ngIf="selectedMovie" [selectedMovie]=selectedMovie></app-movie-info>
   </div>
   <div class="detail_left">
     <app-movie-trailer videoId="{{movieUrlId}}"></app-movie-trailer>

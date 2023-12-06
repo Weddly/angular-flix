@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie';
 
 @Component({
@@ -6,12 +6,27 @@ import { Movie } from 'src/app/interfaces/movie';
   templateUrl: './movie-info.component.html',
   styleUrls: ['./movie-info.component.css']
 })
-export class MovieInfoComponent {
+export class MovieInfoComponent implements OnInit {
   @Input()
   selectedMovie!: Movie;
 
-  changeWatchList(): void {
-    this.selectedMovie.addedToWatchList = !this.selectedMovie.addedToWatchList;
+  ngOnInit(): void {
+    this.checkWatchList()
   }
 
+  changeWatchList(): void {
+    this.selectedMovie.addedToWatchList = !this.selectedMovie.addedToWatchList;
+    if (this.selectedMovie.addedToWatchList) {
+      localStorage.setItem(this.selectedMovie.id.toString(), this.selectedMovie.addedToWatchList.toString());
+    } else {
+      localStorage.removeItem(this.selectedMovie.id.toString());
+    }
+  }
+
+  checkWatchList(): void {
+    let value = localStorage.getItem(this.selectedMovie.id.toString());
+    if (value) {
+      this.selectedMovie.addedToWatchList = Boolean(value);
+    }
+  }
 }

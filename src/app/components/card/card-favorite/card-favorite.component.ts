@@ -12,8 +12,18 @@ export class CardFavoriteComponent {
   removeIcon = faMinusCircle;
   @Input()
   addedToWatchlist: Boolean = false;
+  @Input()
+  movieId!: number;
 
-  changeWatchList(value: Boolean): void {
+  constructor() { }
+
+  changeWatchList(id: number, value: Boolean): void {
+    if (value) {
+      localStorage.setItem(id.toString(), value.toString());
+
+    } else {
+      localStorage.removeItem(id.toString());
+    }
     this.addedToWatchlist = value;
   }
 
