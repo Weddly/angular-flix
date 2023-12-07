@@ -38,7 +38,7 @@ export class InMemoryDataService implements InMemoryDbService {
         duration: "2h 10min",
         genre: "Comedy, Crime, Drama",
         releasedDate: new Date("2019-11-27"),
-        trailer: "https://www.youtube.com/watch?v=d96cjJhvlMA"
+        trailer: "https://www.youtube.com/watch?v=qGqiHJTsRkQ"
       },
       {
         id: 4,
@@ -51,6 +51,17 @@ export class InMemoryDataService implements InMemoryDbService {
         releasedDate: new Date("2015-05-01"),
         trailer: "https://www.youtube.com/watch?v=tmeOjFno6Do"
       },
+      {
+        id: 5,
+        poster: "assets/images/Guardians_of_The_Galaxy.png",
+        title: "Guardians of the Galaxy",
+        description: "A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.",
+        rating: 8.0,
+        duration: "2h 1min",
+        genre: "Action, Adventure, Comedy",
+        releasedDate: new Date("2014-08-01"),
+        trailer: "https://www.youtube.com/watch?v=d96cjJhvlMA"
+      }
     ];
     return { movies };
   }

@@ -13,8 +13,8 @@ import { CardFavoriteComponent } from './components/card/card-favorite/card-favo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-import { MovieInfoComponent } from './components/movie-info/movie-info.component';
-import { MovieTrailerComponent } from './components/movie-trailer/movie-trailer.component';
+import { MovieInfoComponent } from './components/movie/movie-info/movie-info.component';
+import { MovieTrailerComponent } from './components/movie/movie-trailer/movie-trailer.component';
 import { MovieService } from './services/movie.service';
 
 @NgModule({

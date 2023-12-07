@@ -1,6 +1,7 @@
 .trailer__title {
   text-align: center;
   color: white;
+  cursor: pointer;
 }
 
 .trailer__title__icon{
@@ -8,4 +9,5 @@
   color: white;
   font-size: 25px;
   margin-left: 5px;
+  cursor: pointer;
 }
